@@ -45,6 +45,7 @@
             --accent-purple: #9575cd;
             --text-light: #e0f7fa;
             --success-green: #4CAF50;
+            --ad-bg: rgba(255, 255, 255, 0.05);
         }
 
         body {
@@ -80,13 +81,59 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 2rem 1rem;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+        }
+
+        /* Ad Placeholders */
+        .ad-container {
+            width: 100%;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ad-placeholder {
+            background: var(--ad-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .ad-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ad-horizontal {
+            width: 728px;
+            height: 90px;
+        }
+
+        .ad-square {
+            width: 300px;
+            height: 250px;
+        }
+
+        .ad-banner {
+            width: 468px;
+            height: 60px;
         }
 
         /* Phase 1: The Hook */
@@ -117,10 +164,11 @@
 
         .subtitle {
             font-size: 1.2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             opacity: 0.8;
             font-weight: 300;
             line-height: 1.6;
+            max-width: 800px;
         }
 
         .input-group {
@@ -169,7 +217,7 @@
             width: 100%;
             height: 300px;
             position: relative;
-            margin: 3rem 0;
+            margin: 2rem 0;
             overflow: hidden;
         }
 
@@ -245,7 +293,7 @@
         .share-buttons {
             display: flex;
             gap: 1rem;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -317,6 +365,19 @@
             to { transform: translate(-50%, 0); opacity: 1; }
         }
 
+        /* Ad Placement Styling */
+        .ad-top {
+            margin-bottom: 2rem;
+        }
+
+        .ad-middle {
+            margin: 2rem 0;
+        }
+
+        .ad-bottom {
+            margin-top: 2rem;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -336,22 +397,54 @@
                 width: 200px;
                 justify-content: center;
             }
+            
+            .ad-horizontal, .ad-banner {
+                width: 100%;
+                max-width: 320px;
+                height: 100px;
+            }
+            
+            .ad-square {
+                width: 300px;
+                height: 250px;
+            }
+            
+            .ad-placeholder {
+                padding: 0.5rem;
+            }
         }
     </style>
     
-    <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MNFFS1GYZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MNFFS1GYZT');
-</script>
+    <!-- Google Analytics Placeholder - REPLACE WITH YOUR ID -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M14WQ450Z4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M14WQ450Z4');
+    </script>
+    -->
+    
+    <!-- Google AdSense Placeholder - ADD YOUR CODE -->
+    <!-- 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3851583621634134"
+     crossorigin="anonymous"></script>
+    -->
 </head>
 <body>
     <div class="stars" id="stars"></div>
     
+    <!-- Top Ad Placeholder -->
     <div class="container">
+        <div class="ad-container ad-top">
+            <div class="ad-placeholder ad-horizontal">
+                <div class="ad-label">Advertisement</div>
+                <div>Google AdSense - Leaderboard (728x90)</div>
+                <small>pub-3851583621634134</small>
+            </div>
+        </div>
+
         <!-- Phase 1: The Hook -->
         <div class="phase active" id="phase1">
             <h1 class="title">The Human Time Machine</h1>
@@ -378,6 +471,15 @@
                 </button>
             </div>
             
+            <!-- Middle Ad Placeholder -->
+            <div class="ad-container ad-middle">
+                <div class="ad-placeholder ad-square">
+                    <div class="ad-label">Advertisement</div>
+                    <div>Google AdSense - Medium Rectangle (300x250)</div>
+                    <small>pub-3851583621634134</small>
+                </div>
+            </div>
+            
             <p style="opacity: 0.7; margin-top: 2rem; font-size: 0.9rem;">
                 Join thousands discovering their beautiful journey through time
             </p>
@@ -397,6 +499,15 @@
             <div class="input-group">
                 <textarea id="memory" placeholder="What's a beautiful memory from your journey? (e.g., 'Learning to ride a bike', 'My graduation day', 'First love')" rows="3" style="width: 100%; max-width: 500px;"></textarea>
                 <button onclick="addMemory()">✨ Add Memory Star</button>
+            </div>
+            
+            <!-- Banner Ad Placeholder -->
+            <div class="ad-container">
+                <div class="ad-placeholder ad-banner">
+                    <div class="ad-label">Advertisement</div>
+                    <div>Google AdSense - Banner (468x60)</div>
+                    <small>pub-3851583621634134</small>
+                </div>
             </div>
             
             <div class="share-buttons">
@@ -431,6 +542,15 @@
                 <button onclick="shareSite()">⏳ Share This Feeling</button>
             </div>
             
+            <!-- Middle Ad Placeholder -->
+            <div class="ad-container ad-middle">
+                <div class="ad-placeholder ad-square">
+                    <div class="ad-label">Advertisement</div>
+                    <div>Google AdSense - Medium Rectangle (300x250)</div>
+                    <small>pub-3851583621634134</small>
+                </div>
+            </div>
+            
             <div class="share-buttons">
                 <button class="share-btn twitter" onclick="shareOnTwitter()">
                     🐦 Tweet This
@@ -448,6 +568,15 @@
                 <p>Join other time travelers discovering their journey (one email per week)</p>
                 <input type="email" id="newsletterEmail" placeholder="your.email@example.com">
                 <button onclick="joinNewsletter()">Join the Journey</button>
+            </div>
+            
+            <!-- Bottom Ad Placeholder -->
+            <div class="ad-container ad-bottom">
+                <div class="ad-placeholder ad-horizontal">
+                    <div class="ad-label">Advertisement</div>
+                    <div>Google AdSense - Leaderboard (728x90)</div>
+                    <small>pub-3851583621634134</small>
+                </div>
             </div>
             
             <button onclick="restartJourney()" class="secondary">
@@ -508,8 +637,10 @@
             defaultDate.setFullYear(defaultDate.getFullYear() - 30);
             document.getElementById('birthdate').valueAsDate = defaultDate;
             
-            // Track page view
-            gtag('event', 'page_view');
+            // Track page view (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'page_view');
+            // }
         });
 
         // Phase 1: Begin Journey
@@ -527,10 +658,12 @@
             initializeTimeline();
             startCounter();
             
-            // Track conversion
-            gtag('event', 'begin_journey', {
-                'user_age': userAge
-            });
+            // Track conversion (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'begin_journey', {
+            //         'user_age': userAge
+            //     });
+            // }
         }
 
         function calculateAge(birthdate) {
@@ -622,10 +755,12 @@
             // Show confirmation
             showToast('✨ Memory star added to your timeline!');
             
-            // Track memory creation
-            gtag('event', 'add_memory', {
-                'memory_count': memoryCount
-            });
+            // Track memory creation (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'add_memory', {
+            //         'memory_count': memoryCount
+            //     });
+            // }
         }
 
         // Phase 3: Share
@@ -636,11 +771,13 @@
             
             showPhase('phase3');
             
-            // Track completion
-            gtag('event', 'journey_completed', {
-                'age': userAge,
-                'memories_count': memoryCount
-            });
+            // Track completion (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'journey_completed', {
+            //         'age': userAge,
+            //         'memories_count': memoryCount
+            //     });
+            // }
         }
 
         // Social Sharing Functions
@@ -652,20 +789,26 @@
             const url = `https://twitter.com/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(text)}&hashtags=TimeTravel,HumanJourney`;
             window.open(url, '_blank');
             
-            gtag('event', 'share', {
-                'method': 'Twitter',
-                'content_type': 'website'
-            });
+            // Track share (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'share', {
+            //         'method': 'Twitter',
+            //         'content_type': 'website'
+            //     });
+            // }
         }
 
         function shareOnFacebook() {
             const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
             window.open(url, '_blank');
             
-            gtag('event', 'share', {
-                'method': 'Facebook',
-                'content_type': 'website'
-            });
+            // Track share (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'share', {
+            //         'method': 'Facebook',
+            //         'content_type': 'website'
+            //     });
+            // }
         }
 
         function shareMyJourney() {
@@ -679,10 +822,13 @@
                 showToast('🔗 Link copied! Share it with friends');
             });
             
-            gtag('event', 'share', {
-                'method': 'CopyLink',
-                'content_type': 'website'
-            });
+            // Track share (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'share', {
+            //         'method': 'CopyLink',
+            //         'content_type': 'website'
+            //     });
+            // }
         }
 
         function shareSite() {
@@ -692,10 +838,13 @@
                     text: 'Discover your journey through time - we are all time travelers!',
                     url: window.location.href
                 }).then(() => {
-                    gtag('event', 'share', {
-                        'method': 'Native',
-                        'content_type': 'website'
-                    });
+                    // Track share (uncomment when GA is added)
+                    // if (typeof gtag !== 'undefined') {
+                    //     gtag('event', 'share', {
+                    //         'method': 'Native',
+                    //         'content_type': 'website'
+                    //     });
+                    // }
                 });
             } else {
                 copyLink();
@@ -707,10 +856,14 @@
             showToast('🖼️ Your journey graphic is ready! Right-click to save or share.');
             
             // In real implementation, use html2canvas to generate actual image
-            gtag('event', 'generate_image', {
-                'age': userAge,
-                'memories': memoryCount
-            });
+            
+            // Track image generation (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'generate_image', {
+            //         'age': userAge,
+            //         'memories': memoryCount
+            //     });
+            // }
         }
 
         function joinNewsletter() {
@@ -719,9 +872,12 @@
                 showToast('🎉 Welcome to the journey! Check your email for confirmation.');
                 document.getElementById('newsletterEmail').value = '';
                 
-                gtag('event', 'newsletter_signup', {
-                    'email_length': email.length
-                });
+                // Track newsletter signup (uncomment when GA is added)
+                // if (typeof gtag !== 'undefined') {
+                //     gtag('event', 'newsletter_signup', {
+                //         'email_length': email.length
+                //     });
+                // }
             } else {
                 showToast('Please enter a valid email address');
             }
@@ -736,7 +892,10 @@
             document.getElementById('newsletterEmail').value = '';
             showPhase('phase1');
             
-            gtag('event', 'restart_journey');
+            // Track restart (uncomment when GA is added)
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', 'restart_journey');
+            // }
         }
 
         // Utility function to show toast messages
@@ -772,8 +931,4 @@
         }, 10000);
     </script>
 </body>
-
 </html>
-
-
-
